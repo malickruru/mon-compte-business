@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "../theme/theme";
+import { ThemeEditorProvider } from "@hypertheme-editor/chakra-ui";
+import SignIn from "../view/SignIn";
+---
+
+<Layout>
+    <SignIn client:only/>
+</Layout>
