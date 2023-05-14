@@ -37,7 +37,7 @@ function AuthIllustration(props) {
           position='absolute'
           right='0px'>
           <Flex
-            bg={`url(/img/gradient_bg.jpg)`}
+            bg={`url(/dev/mon_compte_business/img/gradient_bg.jpg)`}
             justify='center'
             align='center'
             w='100%'
@@ -49,7 +49,7 @@ function AuthIllustration(props) {
           >
             <Image
               boxSize="500px"
-              src="/img/logo1.png"
+              src="/dev/mon_compte_business/img/logo1.png"
               alt="Free Chakra UI Dashboard"
             />
           </Flex>

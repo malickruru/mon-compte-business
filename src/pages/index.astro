@@ -1,9 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Bilan from '../view/Bilan';
+
+
 ---
 
 <Layout >
-	<p>coucou</p>
+	<!-- <style>
+		body{
+			overflow-y: hidden;
+		}
+	</style> -->
+	<Bilan client:only/>
 </Layout>
 

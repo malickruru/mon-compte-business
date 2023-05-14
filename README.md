@@ -1,3 +1,9 @@
+$arr = my_json_decode($value);
+$value = "<img src=\"".GetWebRootPath().$arr[0]["thumbnail"]."\">";
+
+
+https://www.7cortex.com/7cortexintegration/files/pp_1u7b6fco.jpg
+
 # Astro Starter Kit: Basics
 
 ```

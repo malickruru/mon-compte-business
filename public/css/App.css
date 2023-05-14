@@ -44,3 +44,8 @@ option {
     transform: rotate(360deg);
   }
 }
+
+
+a:hover{
+  opacity: 0.7;
+}

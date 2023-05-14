@@ -9,54 +9,53 @@ import {
   Text,
 } from "@chakra-ui/react";
 // Custom components
-import Card from "components/card/Card.js";
+import Card from "./Card";
 // Custom icons
 import React from "react";
 
-export default function Default(props) {
-  const { startContent, endContent, name, growth, value } = props;
-  const textColor = useColorModeValue("secondaryGray.900", "white");
+export default function MiniStatistics(props) {
+  const { startContent, endContent, name, growth, value , colorValue = false, w ,mainStat = false } = props;
+  const textColor = () => {
+    if (colorValue) {
+      return parseInt(value) > 0 ? 'green.500' : 'red.500' ; 
+    }else{
+      return "secondaryGray.900";
+    }
+  } 
   const textColorSecondary = "secondaryGray.600";
 
   return (
-    <Card py='15px'>
+    <Card py='15px' w={{base : "100%" , md : w}}   my={5}>
       <Flex
+     
         my='auto'
         h='100%'
         align={{ base: "center", xl: "start" }}
         justify={{ base: "center", xl: "center" }}>
         {startContent}
 
-        <Stat my='auto' ms={startContent ? "18px" : "0px"}>
+        <Stat flex={ mainStat ? 'unset' : "1"} my='auto' ms={startContent ? "18px" : "0px"} >
           <StatLabel
             lineHeight='100%'
             color={textColorSecondary}
-            fontSize={{
-              base: "sm",
-            }}>
+            fontSize={ mainStat ? {base: "sm", md : "xl"} : {base: "sm"}}>
             {name}
           </StatLabel>
           <StatNumber
             color={textColor}
-            fontSize={{
-              base: "2xl",
-            }}>
-            {value}
+            fontSize={mainStat ? {base: "2xl", md : "6xl"} : {base: "2xl"}}>
+            {parseInt(value).toLocaleString() + " KT"}
+         
           </StatNumber>
           {growth ? (
             <Flex align='center'>
-              <Text color='green.500' fontSize='xs' fontWeight='700' me='5px'>
+              <Text color='secondaryGray.600' fontSize='xs' fontWeight='700' me='5px'>
                 {growth}
-              </Text>
-              <Text color='secondaryGray.600' fontSize='xs' fontWeight='400'>
-                since last month
               </Text>
             </Flex>
           ) : null}
         </Stat>
-        <Flex ms='auto' w='max-content'>
-          {endContent}
-        </Flex>
+        
       </Flex>
     </Card>
   );

@@ -71,7 +71,7 @@ function SignIn() {
             setShowError(true)
           }else{
             setCookie('7cortex_user',JSON.stringify(result.data))
-            window.location.href = '/'
+            window.location.href = '/dev/mon_compte_business/'
           }
           
         }

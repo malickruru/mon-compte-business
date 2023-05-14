@@ -8,12 +8,13 @@ export function setCookie(name, value) {
     var time = now.getTime();
     time += 20 * 60 * 1000; // 20 minutes en millisecondes
     now.setTime(time);
-    document.cookie = name + '=' + value + ';expires=' + now.toUTCString() + ';path=/';
+    
+    document.cookie = name + '=' + value.replace(/;/g, ","); + ';expires=' + now.toUTCString() + ';path=/';
   }
   
 
 // retourner un cookie
-  function getCookie(name) {
+export function getCookie(name) {
     const cookies = document.cookie.split(';');
   
     for (let i = 0; i < cookies.length; i++) {
@@ -29,7 +30,7 @@ export function setCookie(name, value) {
   
 
   //supprimer un cookie
-  function deleteCookie(name) {
+export function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
   }
 
