@@ -118,6 +118,28 @@ const Bilan = () => {
                         fontWeight="semibold"
                         my="12px"
                     >
+                        Travaux 7goto
+                    </Text>
+                    <Row name="Travaux effectués" price={bilan[0].prgoto}/>
+                    <Row name="Travaux réglés" price={bilan[0].reglgainkt}/>
+                    <Row name="Travaux à percevoir" price={bilan[0].productionapercevoir}/>
+                    <Text
+                        color="gray.400"
+                        fontSize='2xl'
+                        fontWeight="semibold"
+                        my="12px"
+                    >
+                        Liquidités
+                    </Text>
+                    <Row name="Dêpot en caisse" price={bilan[0].caisse}/>
+                    <Row name="Retrait caisse" price={bilan[0].caisse_debit}/>
+                    <Row name="Solde caisse" price={bilan[0].soldecaisse}/>
+                    <Text
+                        color="gray.400"
+                        fontSize='2xl'
+                        fontWeight="semibold"
+                        my="12px"
+                    >
                         Stock
                     </Text>
                     <Row name="Sortie de stock" price={bilan[0].sortie_stock}/>
@@ -138,10 +160,10 @@ const Bilan = () => {
                         fontWeight="semibold"
                         my="12px"
                     >
-                        Marge brut
+                        Solde
                     </Text>
-                    <Row name="Marge Brut (client - fournisseur) " price={bilan[0].margebrut} textColor={parseInt(bilan[0].margebrut) > 0 ? 'green.500' : 'red.500' }/>
-                    
+                    <Row name="Marge Brut (client - fournisseur) " price={bilan[0].margebrut} />
+                    <Row name="Revenu disponible " price={bilan[0].revenu} textColor={parseInt(bilan[0].revenu) > 0 ? 'green.500' : 'red.500' }/>
                 </Flex>
             </Flex>
 

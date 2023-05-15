@@ -1,16 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Bilan from '../view/Bilan';
+import PageLoader from '../components/loader/PageLoader.astro';
 
 
 ---
 
 <Layout >
-	<!-- <style>
-		body{
-			overflow-y: hidden;
-		}
-	</style> -->
+	
+	<PageLoader/>
 	<Bilan client:only/>
 </Layout>
 
