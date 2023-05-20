@@ -1,49 +1,5 @@
 <style>
-    .load {
-        background-color: #fff;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        z-index: 999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
 
-    .loader {
-        margin: 50px 0;
-  width: 300px;
-  height: 3px;
-  /* background-color: #ccc; */
-  position: relative;
-  overflow: hidden;
-}
-
-.loader::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background-color: #52f4e3;
-  animation: loader 5s  infinite;
-}
-
-@keyframes loader {
-  0% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(200%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 
 </style>
 

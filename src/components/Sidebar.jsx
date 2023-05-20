@@ -1,6 +1,7 @@
 import { List, ListItem, ListIcon, Box, border } from "@chakra-ui/react";
 import { MdDashboard, MdPeople, MdSettings } from "react-icons/md";
 import { AiOutlineAreaChart } from "react-icons/ai";
+import { TbPigMoney } from "react-icons/tb";
 
 
 function Sidebar({ activeLink }) {
@@ -28,13 +29,19 @@ function Sidebar({ activeLink }) {
 
         <ListItem p="5px" display="flex"  style={active("Tableau de bord")}>
         <ListIcon as={MdDashboard} color="blue.500" />
-          <a href="/" >
+          <a href="/dev/mon_compte_business/" >
             Tableau de bord
           </a>
           
         </ListItem>
 
-        
+        <ListItem p="5px" display="flex"  style={active("Factures clients")}>
+        <ListIcon as={TbPigMoney} color="blue.500" />
+          <a href="/dev/mon_compte_business/facture_client/list" >
+            Factures clients
+          </a>
+          
+        </ListItem>
 
       </List>
     </Box>

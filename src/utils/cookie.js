@@ -4,55 +4,20 @@
 // cette fonction stock un cookie contenant les infos de l'utilisateur
 // il expire dans 20min date à laquelle l'utilsateur est déconnecté du serveur
 export function setCookie(name, value) {
-    var now = new Date();
-    var time = now.getTime();
-    time += 20 * 60 * 1000; // 20 minutes en millisecondes
-    now.setTime(time);
-    
-    document.cookie = name + '=' + value.replace(/;/g, ","); + ';expires=' + now.toUTCString() + ';path=/';
+  sessionStorage.setItem(name, value);
   }
   
 
 // retourner un cookie
 export function getCookie(name) {
-    const cookies = document.cookie.split(';');
-  
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].trim();
-  
-      if (cookie.startsWith(`${name}=`)) {
-        return JSON.parse(cookie.substring(name.length + 1));
-      }
-    }
-  
-    return null;
+  const value = sessionStorage.getItem(name);
+  return value ? JSON.parse(value) : null;
   }
   
 
   //supprimer un cookie
 export function deleteCookie(name) {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+  sessionStorage.removeItem(name);
+  window.location.reload();
   }
 
-
-  // récupérer le token 
-  function getToken(){
-    if(getCookie("BugTrackerUser") == null){
-        window.location.href = '/login.html'
-        return
-    }
-
-    return getCookie("BugTrackerUser").token
-
-}
-
-// récupérer l'id de l'utilisateur connecté
-function getUserId(){
-  if(getCookie("BugTrackerUser") == null){
-      window.location.href = '/login.html'
-      return
-  }
-
-  return getCookie("BugTrackerUser").id
-
-}

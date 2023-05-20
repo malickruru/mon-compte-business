@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FactureClientList from '../../view/factureClient/List';
+import PageLoader from '../../components/loader/PageLoader.astro';
+
+
+---
+
+<Layout >
+	<!-- <PageLoader/> -->
+	<FactureClientList client:only/>
+</Layout>
+

@@ -8,7 +8,7 @@ const Navbar = ({ toggleMenu,user }) => {
 
   const logout = () => {
     deleteCookie("7cortex_user");
-    window.location.href = './signup'
+    // window.location.href = '/dev/mon_compte_business/signup'
   }
   return (
     <Flex bg="blue.500" px="4" py="3" alignItems="center">
